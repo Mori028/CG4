@@ -89,11 +89,11 @@ void GameScene::Draw(DirectXCommon* dXCommon)
 	// 描画前処理
 	dXCommon->PreDraw();
 
-	// 3Dオブジェクトの描画
+	//// 3Dオブジェクトの描画
 	//ObjectDraw(dXCommon);
-	// パーティクルの描画
+	//// パーティクルの描画
 	//ParticleDraw(dXCommon);
-	// 画像描画
+	//// 画像描画
 	//GameDraw(dXCommon);
 	//gTS->Draw(dXCommon);
 			
@@ -180,19 +180,40 @@ void GameScene::ObjectUpdate()
 		position[0].y += 0.4;
 	}
 
-	if (input->PushKey(DIK_A)) {
+	/*if (input->PushKey(DIK_A)) {
 		position[0].x -= 0.4;
 		isPush_A = true;
+	}*/
+	else {
+		isPush_A = false;
 	}
-	
+	if (isPush_D == false) {
+		if (isPush_A == true) {
+			if (rotation[0].x >= -20) {
+				rotation[0].x -= 1;
+			}
+			if (rotation[0].x <= -20) {
+				rotation[0].x = -20;
+			}
+		}
+		else {
+			if (rotation[0].x >= -20) {
+				rotation[0].x += 1;
+			}
+			if (rotation[0].x >= 0) {
+				rotation[0].x = 0;
+			}
+		}
+	}
+
 	if (input->PushKey(DIK_S)) {
 		position[0].y -= 0.4;
 	}
 
-	if (input->PushKey(DIK_D)) {
+	/*if (input->PushKey(DIK_D)) {
 		position[0].x += 0.4;
 		isPush_D = true;
-	}
+	}*/
 	else {
 		isPush_D = false;
 	}
