@@ -6,9 +6,13 @@
 #include "Object3d.h"
 #include "GameScene.h"
 #include "Camera.h"
+//#include "fbxsdk.h"
 
 // windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+
+	//FBX
+	/*FbxManager* fbxManager = FbxManager::Create();*/
 
 	// コンソールへの文字出力
 	OutputDebugStringA("Hellow,DirectX!!\n");
