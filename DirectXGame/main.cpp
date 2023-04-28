@@ -7,6 +7,7 @@
 #include "GameScene.h"
 #include "Camera.h"
 //#include "fbxsdk.h"
+#include "FbxLoader.h"
 
 // windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -36,6 +37,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// スプライト
 	SpriteCommon spriteCommon;
+
+	FbxLoader::GetInstance()->Initialize(dXCommon->GetDevice());
 
 	// 3Dオブジェクト静的初期化
 	Object3d::StaticInitialize(dXCommon->GetDevice(), WinApp::window_width, WinApp::window_height,camera);
@@ -96,6 +99,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	delete winApp;
 	winApp = nullptr;
 
+	FbxLoader::GetInstance()->Finalize();
 	// DirectX解放
 	dXCommon->fpsFixedFinalize();
 	delete dXCommon;

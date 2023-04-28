@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "FbxLoader.h"
 
 GameScene::GameScene()
 {
@@ -16,6 +17,9 @@ void GameScene::Initialize(DirectXCommon* dXCommon, WinApp* winApp, SpriteCommon
 	particleMan = ParticleManager::Create();
 	particleMan->LoadTexture(L"Resources/particle2.png");
 	particleMan->Update();
+
+	//モデル名を指定してファイル読み込み
+	FbxLoader::GetInstance()->LoadModelFromFile("cube");
 
 	/*particleMan1 = ParticleManager::Create();
 	particleMan1->LoadTexture(L"Resources/effect1.png");
