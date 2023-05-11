@@ -5,6 +5,7 @@
 #include <d3d12.h>
 #include <d3dx12.h>
 #include <string>
+#include "Model.h"
 
 class FbxLoader
 {
@@ -38,6 +39,10 @@ public:
 	/// </summary>
 	void Finalize();
 
+	/// <summary>
+	/// 再帰的にノード構成を解析 
+	/// </summary>
+	void ParseNodeRecursive(Model* model, FbxNode* fbxNode);
 private:
 	// privateなコンストラクタ（シングルトンパターン）
 	FbxLoader() = default;
