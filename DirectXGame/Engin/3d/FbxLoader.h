@@ -42,7 +42,7 @@ public:
 	/// <summary>
 	/// 再帰的にノード構成を解析 
 	/// </summary>
-	void ParseNodeRecursive(Model* model, FbxNode* fbxNode);
+	void ParseNodeRecursive(Model* model, FbxNode* fbxNode,Node* parent = nullptr);
 private:
 	// privateなコンストラクタ（シングルトンパターン）
 	FbxLoader() = default;
