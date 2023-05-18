@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "FbxLoader.h"
+#include "Object3d.h"
 
 GameScene::GameScene()
 {
@@ -39,6 +40,11 @@ void GameScene::Initialize(DirectXCommon* dXCommon, WinApp* winApp, SpriteCommon
 	gTS = new GameTitleScene();
 	gTS->Initialize();
 	
+	// デバイスをセット
+	Object3d::SetDevice(dxCommon->GetDevice());
+	// カメラをセット
+	Object3d::SetCamera(camera);
+
 	// オブジェクトの初期化
 	ObjectInitialize(dXCommon);
 	// スプライトの初期化

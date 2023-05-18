@@ -91,6 +91,9 @@
     <Filter Include="ヘッダー ファイル\Engin\Camera">
       <UniqueIdentifier>{a3316664-3aae-41dc-8d69-84ea12527c10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="シェーダーファイル\FBX">
+      <UniqueIdentifier>{7a9960e3-7b36-4409-ae67-5ec19f2b3bd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectXGame\Engin\Input\Input.cpp">
@@ -161,6 +164,9 @@
     <None Include="Resources\shaders\Particle.hlsli">
       <Filter>シェーダーファイル\Particle</Filter>
     </None>
+    <None Include="FBX.hlsli">
+      <Filter>シェーダーファイル\FBX</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Resources\shaders\BasicPS.hlsl">
@@ -189,6 +195,12 @@
     </FxCompile>
     <FxCompile Include="Resources\shaders\ParticleVS.hlsl">
       <Filter>シェーダーファイル\Particle</Filter>
+    </FxCompile>
+    <FxCompile Include="FBXVS.hlsl">
+      <Filter>シェーダーファイル\FBX</Filter>
+    </FxCompile>
+    <FxCompile Include="FBXPS.hlsl">
+      <Filter>シェーダーファイル\FBX</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
